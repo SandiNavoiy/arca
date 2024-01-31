@@ -17,9 +17,11 @@ x = []
 y = []
 index = date1
 for i in data['data']:
-    x.append(index)
+    x.append(str(index))
     index += datetime.timedelta(days=1)
+
     y.append(i['nav_per_share'])
+
 # print(data['data'])
 #Вывод графического представления об активах фонда
 plt.plot(x,y)
