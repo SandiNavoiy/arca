@@ -1,7 +1,7 @@
 import datetime
-import matplotlib.pyplot as plt
-
 import requests
+from unit import grafic
+
 #Текущая дата
 dt_now = datetime.date.today()
 #Задаем диапазон дат
@@ -26,20 +26,6 @@ for i in data['data']:
 
 
 #Вывод графического представления об активах фонда
-def grafic(os_x,os_y):
-    """Вывод графической части"""
-    plt.plot(os_x,os_y)
-    plt.title("Активы фонда")
-    plt.xlabel("Дни")
-    plt.ylabel("Сумма")
-    if len(os_x)<10:
-        k = 1
-    elif 10 <= len(os_x) <= 100:
-        k = 20
-    elif len(os_x) > 100:
-        k = 50
-    plt.xticks(os_x[::k], rotation=45)
-    plt.show()
 
 grafic(x,y)
 #вывод текущей
