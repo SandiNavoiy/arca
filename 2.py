@@ -7,7 +7,7 @@ with open('1.txt', 'r', encoding="utf-8") as file:
 
 rez = []
 for i in new:
-    if  "з" not in i and "е" not in i and "б" not in i and "р" not in i  and "о" not in i and "с" not in i and  i[4] == "а" and  i[2] == "и" and  i[3] == "н":
+    if "б" not in i and  "у" not in i and "к" not in i and "а" not in i and "п" not in i and "ю" not in i and "н" not in i  and "р" not in i  and "д" not in i   and "ш" not in i   and "м" not in i  and "е" not in i and i[3] == "в" :
         rez.append(i)
 
 print(rez)
