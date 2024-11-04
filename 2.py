@@ -1,13 +1,7 @@
-new = []
 with open('1.txt', 'r', encoding="utf-8") as file:
-    for i in file:
-        if len(i) == 6:
-            i = i.replace("\n", "")
-            new.append(i)
+    new = [line.strip() for line in file if len(line.strip()) == 5]  # Убираем символ перевода строки сразу и фильтруем длину строки
 
-rez = []
-for i in new:
-    if "б" not in i and  "у" not in i and "к" not in i and "а" not in i and "п" not in i and "ю" not in i and "н" not in i  and "р" not in i  and "д" not in i   and "ш" not in i   and "м" not in i  and "е" not in i and i[3] == "в" :
-        rez.append(i)
+exclude_chars = set("букапюнрдшме")
+rez = [i for i in new if not exclude_chars.intersection(i) and i[3] == "в"]
 
 print(rez)
